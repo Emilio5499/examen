@@ -10,7 +10,10 @@ class Post extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'slug','summary', 'body', 'status', 'user_id', 'published_at'];
+    /**
+     * Los campos que tienen que ser llenados, el campo Slug por ejemplo se rellenara automaticamente porque es lo mismo que el titulo
+     */
+    protected $fillable = ['title','summary', 'body', 'status', 'user_id', 'published_at'];
 
     public function user(): BelongsTo
     {

@@ -23,7 +23,7 @@ class PostFactory extends Factory
         return [
             'title' => $this->faker->sentence(),
             'slug' => str_replace(' ', '_', 'title'),
-            'summary' => $this->faker->words(50, true),
+            'summary' => $this->faker->text(50),
             'body' => $this->faker->paragraph(),
             'status' => $this->faker->randomElement(['published', 'draft','pending','archived']),
             'reading_time'=>$this->faker->numberBetween(1,100),
