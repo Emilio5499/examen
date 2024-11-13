@@ -10,6 +10,7 @@ class AppLayout extends Component
     public function __construct(
         public string $metaTitle = 'Default title',
         public string $metaDescription = 'Default description',
+        public String $metaSummary = 'Default summary',
     )
     {}
 

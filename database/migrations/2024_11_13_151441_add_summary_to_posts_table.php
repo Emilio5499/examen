@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->string('summary')->after('slug');
+            $table->string('summary')->after('slug')->default('summary');
         });
     }
 

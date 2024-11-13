@@ -23,6 +23,8 @@ class StorePostRequest extends FormRequest
     {
         return [
             'title' => 'required|min:5',
+            'slug' => str_replace(' ','-',$this->input('title'))
+            'summary' => 'nullable|min:10',
             'body' => 'required',
             'published_at' => 'nullable|date',
         ];

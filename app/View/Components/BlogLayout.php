@@ -11,6 +11,7 @@ class BlogLayout extends Component
     public function __construct(
         public string $metaTitle = 'Default title',
         public string $metaDescription = 'Default description',
+        public string $metaSummary = 'Default summary',
     )
     {}
 
