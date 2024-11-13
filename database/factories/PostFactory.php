@@ -26,7 +26,7 @@ class PostFactory extends Factory
             'summary' => $this->faker->text(50),
             'body' => $this->faker->paragraph(),
             'status' => $this->faker->randomElement(['published', 'draft','pending','archived']),
-            'reading_time'=>$this->faker->numberBetween(1,100),
+            'reading_time'=>$this->faker->time,
             'published_at' => random_int(0, 2)
                 ? $this->faker->dateTimeBetween('-1 month', '+1 months')
                 : null,
