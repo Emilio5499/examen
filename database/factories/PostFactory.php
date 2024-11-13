@@ -19,7 +19,11 @@ class PostFactory extends Factory
     {
         return [
             'title' => $this->faker->sentence(),
+            'slug' => str_replace(' ', '_', 'title'),
+            'summary' => $this->faker->words(50, true),
             'body' => $this->faker->paragraph(),
+            'status' => $this->faker->randomElement(['published', 'draft','pending','archived']),
+            'reading_time'=>$this->faker->numberBetween(1,100),
             'published_at' => random_int(0, 2)
                 ? $this->faker->dateTimeBetween('-1 month', '+1 months')
                 : null,
