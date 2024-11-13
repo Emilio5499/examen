@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->time('reading_time')->after('status');
+            $table->string('summary')->after('title')->nullable();
+            //
         });
     }
 
@@ -22,7 +23,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->dropColumn('reading_time');
+            $table->dropColumn('summary');
         });
     }
 };
