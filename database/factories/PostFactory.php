@@ -17,6 +17,9 @@ class PostFactory extends Factory
      */
     public function definition(): array
     {
+        /**
+         * EJERCICIO 2 Se añaden todos los campos con los valores necesarios y las opciones pedidas
+         */
         return [
             'title' => $this->faker->sentence(),
             'slug' => str_replace(' ', '_', 'title'),

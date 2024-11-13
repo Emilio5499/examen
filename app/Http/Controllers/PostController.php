@@ -53,9 +53,12 @@ class PostController extends Controller
             ->with('status', 'Post updated successfully');
     }
 
+    /**
+     * Se añade un condicional usando una query de sql para que solo se pueda borrar si el post esta en draft o pending
+     */
     public function destroy(Post $post)
     {
-        $post->delete();
+        mysqli_query("SELECT status FROM posts WHERE status = 'pending' OR status = 'draft'") ? true : $post->delete();
 
         return to_route('posts.index')
             ->with('status', 'Post deleted successfully');
